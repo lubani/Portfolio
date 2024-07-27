@@ -21,7 +21,7 @@ export default function Projects() {
                         <span className="text-lg hover:underline">Math</span>
                     </Link>
                 </li>
-                <li>
+                {/* <li>
                     <Link href="/projects/RFinance">
                         <span className="text-lg hover:underline">RFinance</span>
                     </Link>
@@ -40,7 +40,7 @@ export default function Projects() {
                     <Link href="/projects/Summarizer-Extension">
                         <span className="text-lg hover:underline">Summarizer Extension</span>
                     </Link>
-                </li>
+                </li> */}
             </ul>
         </main>
     );
