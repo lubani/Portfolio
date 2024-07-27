@@ -27,7 +27,10 @@ yarn-error.log*
 
 # local env files
 .env*.local
-.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # vercel
 .vercel
@@ -36,17 +39,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# vscode settings
-.vscode/
-
-# idea files
-.idea
-
-# other config backup files
-*.backup
-
-# sanity
+# sanity studio
 /sanity/node_modules
-/sanity/.cache
-/sanity/dist
-/sanity/cli/sanity.cli.ts
+
+# others
+.DS_Store
+*.log
+*.gz
