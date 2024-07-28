@@ -5,7 +5,7 @@ import { useState, ChangeEvent, FormEvent } from 'react';
 export default function Contact() {
     const [formData, setFormData] = useState({
         email: '',
-        message: ''
+        message: '',
     });
     const [status, setStatus] = useState('');
 
@@ -23,7 +23,7 @@ export default function Contact() {
             },
             body: JSON.stringify({
                 email: formData.email,
-                message: formData.message
+                message: formData.message,
             }),
         });
 

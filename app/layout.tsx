@@ -19,8 +19,8 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-                <title>{(metadata.title as string) ?? ''}</title>
-                <meta name="description" content={(metadata.description as string) ?? ''} />
+                <title>{metadata.title as string}</title>
+                <meta name="description" content={metadata.description as string} />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </head>
             <body className={inter.className}>
@@ -70,6 +70,11 @@ export default function RootLayout({
                             <li>
                                 <Link href="/contact" className="text-lg hover:underline">
                                     Contact Me
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/cv" className="text-lg hover:underline">
+                                    My CV
                                 </Link>
                             </li>
                         </ul>
