@@ -4,7 +4,7 @@ export default function Projects() {
     return (
         <main className="p-24">
             <h1 className="text-4xl font-bold mb-4">GitHub Projects</h1>
-            <h2 className="text-2xl font-semibold mb-4">Under Construction</h2>
+            {/* <h2 className="text-2xl font-semibold mb-4">Under Construction</h2> */}
             <ul className="list-disc pl-5">
                 <li>
                     <Link href="/projects/DevOps2412">
