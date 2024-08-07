@@ -1,3 +1,4 @@
+// layout.tsx
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Image from 'next/image';
@@ -24,7 +25,7 @@ export default function RootLayout({
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </head>
             <body className={inter.className}>
-                <div className="flex min-h-screen flex-col items-center justify-between p-24">
+                <div className="main-container flex flex-col items-center justify-between">
                     <header className="w-full max-w-5xl text-center">
                         <Image
                             src="/medegree.jpg"
@@ -68,15 +69,16 @@ export default function RootLayout({
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/contact" className="text-lg hover:underline">
-                                    Contact Me
-                                </Link>
-                            </li>
-                            <li>
                                 <Link href="/cv" className="text-lg hover:underline">
                                     My CV
                                 </Link>
                             </li>
+                            <li>
+                                <Link href="/contact" className="text-lg hover:underline">
+                                    Contact Me
+                                </Link>
+                            </li>
+                            
                         </ul>
                     </nav>
                     <main className="w-full max-w-5xl">
