@@ -1,0 +1,14 @@
+/* app/cv/page.module.css */
+
+.pdfDocument {
+  margin: 0;
+  padding: 0;
+}
+
+.pdfPage {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+}

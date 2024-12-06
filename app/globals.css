@@ -1,7 +1,15 @@
 /* globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Quicksand:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Roboto Round Regular';
+  src: url('/fonts/Roboto-Round-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -18,12 +26,13 @@
 }
 
 body {
+  font-family: 'Nunito', 'Quicksand', 'Roboto Round Regular', sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
     to bottom,
     transparent,
     rgb(var(--background-end-rgb))
-  )
+  ),
   rgb(var(--background-start-rgb));
 }
 
@@ -39,4 +48,34 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Button Styles */
+.nav-button {
+  background-color: #333; /* Dark Grey background */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #6a0dad; /* Purple */
+}
+
+/* H2 Box Styles */
+.h2-box {
+  background-color: #6a0dad; /* Purple background */
+  color: white; /* White text color */
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 16px;
 }
