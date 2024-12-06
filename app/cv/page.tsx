@@ -53,3 +53,5 @@ export default function CV() {
         </div>
     );
 }
+
+// git remote add origin https://github.com/lubani/Portfolio.git
