@@ -1,7 +1,7 @@
 // app/cv/page.tsx
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import { pdfjs } from 'react-pdf';
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
@@ -13,19 +13,9 @@ const Page = dynamic(() => import('react-pdf').then(mod => mod.Page), { ssr: fal
 
 export default function CV() {
     const [numPages, setNumPages] = useState<number>(0);
-    const [scale, setScale] = useState<number>(1);
 
     function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
         setNumPages(numPages);
-    }
-
-    function onPageLoadSuccess(page: any, index: number) {
-        if (index === 0 && typeof window !== 'undefined') {
-            const viewport = page.getViewport({ scale: 1 });
-            const desiredWidth = window.innerWidth * 0.9;
-            const newScale = desiredWidth / viewport.width;
-            setScale(newScale > 1 ? 1 : newScale); // Cap at 1 if needed, or adjust multiplier
-        }
     }
 
     function onLoadError(error: Error): void {
@@ -33,7 +23,7 @@ export default function CV() {
     }
 
     return (
-        <div style={{ width: '600px', margin: '0 auto', height: '100vh', overflowY: 'auto' }}>
+        <div style={{ width: '800px', margin: '0 auto', height: '100vh', overflowY: 'auto' }}>
             <Document
                 file="/CV.pdf"
                 onLoadSuccess={onDocumentLoadSuccess}
@@ -41,17 +31,14 @@ export default function CV() {
             >
                 {Array.from({ length: numPages }, (_, index) => (
                     <Page
-                        key={`page_${index + 1}`} // Added key
+                        key={`page_${index + 1}`}
                         pageNumber={index + 1}
-                        width={600}
+                        width={800} // Increased width from 600 to 800
                         renderTextLayer={false}
                         renderAnnotationLayer={true}
                     />
                 ))}
-
             </Document>
         </div>
     );
 }
-
-// git remote add origin https://github.com/lubani/Portfolio.git
